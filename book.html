@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+
+    <!--CDN link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+            if ((document.getElementById("name").value == "") ||
+                (document.getElementById("email").value == "") ||
+                (document.getElementById("phone").value == "") ||
+                (document.getElementById("checkin").value == "") ||
+                (document.getElementById("checkout").value == "") ||
+                (document.getElementById("people").value == "") ||
+                document.getElementById("card").value == "") {
+                alert("PLEASE FILL IN THE REQUIRED FIELDS")
+            } else {
+                alert("BOOKING SUCCESSFULL")
+            }
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="index.html" style="padding: 5px;"><img
+                src="https://cdn-icons-png.freepik.com/512/1668/1668966.png" style="width:40px"></a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item" style="padding: 5px;">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item" style="padding: 5px;">
+                <a class="nav-link" href="room.html">Rooms</a>
+            </li>
+            <li class="nav-item" style="padding: 5px;">
+                <a class="nav-link" href="book.html">Book a Room</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form class="was-validated">
+
+
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" placeholder="Enter your full name here" name="fname" id="name"
+                    required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" placeholder="Enter your email here" id="email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input class="form-control" id="phone" type="number" placeholder="Enter your phone number here"
+                    required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Check-in date</label>
+                <input class="form-control" type="date" placeholder="Enter your check-in date here" id="checkin"
+                    required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Check-out date</label>
+                <input class="form-control" type="date" placeholder="Enter your check-out date here" id="checkout"
+                    required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Number of people</label>
+                <input class="form-control" type="number" placeholder="Enter the number of people here" id="people"
+                    required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Card Number</label>
+                <input class="form-control" type="number" placeholder="Enter your card number here" id="card" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Room type</label>
+                <select class="form-control" id="sel1" required>
+                    <option>Normal Room</option>
+                    <option>Deluxe Room</option>
+                    <option>Premium Room</option>
+                </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Additional comments:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="validateForm()">Book now</button>
+
+        </form>
+    </div>
+    </div>
+
+</body>
+
+</html>
